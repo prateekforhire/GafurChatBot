@@ -1,0 +1,6 @@
+framework module Pods_ChatBotGafur {
+  umbrella header "Pods-ChatBotGafur-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,24 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NcH-tg-8RA">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <!--Navigation Controller-->
+        <scene sceneID="6Tv-J6-nsr">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                <navigationController id="NcH-tg-8RA" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="1jY-oF-1A2">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="ekU-To-hJt" kind="relationship" relationship="rootViewController" id="9Rv-IC-Z4g"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wJg-FJ-hxK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-510" y="23"/>
+        </scene>
+        <!--Gafur Chat BotVC-->
+        <scene sceneID="c6I-rn-uTM">
+            <objects>
+                <viewController id="ekU-To-hJt" customClass="GafurChatBotVC" customModule="ChatBotGafur" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VY1-az-ReN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gafur Bot Response" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EN6-V9-vOA">
+                                <rect key="frame" x="16" y="64" width="343" height="160"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="NrL-Dg-eao"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EKU-aM-1cB">
+                                <rect key="frame" x="0.0" y="615" width="375" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="FbM-VV-q0H"/>
+                                </constraints>
+                                <items>
+                                    <barButtonItem systemItem="camera" id="Hn6-ED-QHW"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="uUz-Ac-yOM"/>
+                                    <barButtonItem style="plain" id="NIy-iH-Tk4">
+                                        <textField key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Message Gafur Bhai" textAlignment="natural" minimumFontSize="17" id="XgO-RB-WXB">
+                                            <rect key="frame" x="46" y="7" width="283" height="30"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <nil key="textColor"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits"/>
+                                            <connections>
+                                                <outlet property="delegate" destination="ekU-To-hJt" id="czm-7f-0nw"/>
+                                            </connections>
+                                        </textField>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Yg0-fd-wJl"/>
+                                    <barButtonItem systemItem="play" id="Ft6-lw-OHF">
+                                        <connections>
+                                            <action selector="sendMessage" destination="ekU-To-hJt" id="Ana-D1-fvU"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="eSc-id-b3h" firstAttribute="bottom" secondItem="EKU-aM-1cB" secondAttribute="bottom" constant="8" id="3oB-wn-XkU"/>
+                            <constraint firstItem="EKU-aM-1cB" firstAttribute="leading" secondItem="eSc-id-b3h" secondAttribute="leading" id="Q5n-eY-V6D"/>
+                            <constraint firstItem="EN6-V9-vOA" firstAttribute="top" secondItem="eSc-id-b3h" secondAttribute="top" id="jtj-Fq-lVj"/>
+                            <constraint firstItem="eSc-id-b3h" firstAttribute="trailing" secondItem="EN6-V9-vOA" secondAttribute="trailing" constant="16" id="k8H-I3-Gey"/>
+                            <constraint firstItem="EKU-aM-1cB" firstAttribute="trailing" secondItem="eSc-id-b3h" secondAttribute="trailing" id="pGg-xj-SCJ"/>
+                            <constraint firstItem="EN6-V9-vOA" firstAttribute="leading" secondItem="eSc-id-b3h" secondAttribute="leading" constant="16" id="uvA-Z1-cOs"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="eSc-id-b3h"/>
                     </view>
+                    <navigationItem key="navigationItem" id="TkP-Lz-zJL"/>
+                    <connections>
+                        <outlet property="botResponse" destination="EN6-V9-vOA" id="o5H-9N-wi3"/>
+                        <outlet property="chatToolBar" destination="EKU-aM-1cB" id="3kR-8u-Nou"/>
+                        <outlet property="messageField" destination="XgO-RB-WXB" id="qHk-8e-1KK"/>
+                    </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gl8-SK-1ed" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="236" y="22.938530734632685"/>
         </scene>
     </scenes>
 </document>
